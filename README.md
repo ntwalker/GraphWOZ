@@ -5,14 +5,16 @@ This repository contains code for:
 2) Entity-linking by cosine similarity
 3) Training and evaluating a GNN for entity-linking with GraphWOZ Data.
 
-#Preprocessing
+# Preprocessing
+
 homogeneous_graph_transform.py transforms the raw json data to PyTorch Geometric Data objects using BERT to encode strings as node and edge attributes.
 Please note: 
 1) This is slow, because it does not currently use CUDA 
 2) Each dialogue turn is saved as a separate graph in the "dialogues" folder
 3) Only mention nodes from the current turn are encoded in the graph, and no agent responses are included (all previous turn utterances are, however, included)
 
-#Entity-Linking
+# Entity-Linking
+
 Two main files handle this: cosine_compare_entities.py contains the code for computing Precision@1 and MRR metrics for entity mention-entity links in the graph.
 The method for calculating this will also output a file for the dataset containing triples in the form of (Mention, Predicted Entity, True Entity)
 
