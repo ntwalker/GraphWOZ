@@ -86,8 +86,7 @@ optimizer = torch.optim.Adam(model.parameters(), lr=0.00001, weight_decay=5e-4)
 #nongraph_entity_link(test_dataset, "test")
 #print("Calculating cosine similarities for test set...")
 
-for epoch in range(1):
-    continue
+for epoch in range(20):
     print("Training Epoch %d..." %(epoch+1))
     counter = 0
     total_loss = 0
@@ -151,11 +150,11 @@ for epoch in range(1):
             tgt_index = mention_edge[1]
             src_to_targets[src_index][tgt_index] = 1
 
-        # Weight positive links higher if desired
-        #weight = torch.zeros(target.size())
-        #weight[data.mention_edges[0][1]] = .5
-        #weight[50] = .5
-        #weight = torch.flatten(weight)
+            # Weight positive links higher if desired
+            #weight = torch.zeros(target.size())
+            #weight[data.mention_edges[0][1]] = .5
+            #weight[50] = .5
+            #weight = torch.flatten(weight)
 
             out = model(data.x, data.edge_index, src_index)
             #criterion = torch.nn.BCELoss(weight=weight)
@@ -176,7 +175,7 @@ for epoch in range(1):
             file.write(str(p))
             file.write("\n")
         acc = correct / total
-        file.write("Accuracy: ")
+        file.write("Precision: ")
         file.write(str(acc))
 
     print("Total Training loss: %f" %total_loss)
