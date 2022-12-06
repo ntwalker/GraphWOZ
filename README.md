@@ -11,7 +11,6 @@ homogeneous_graph_transform.py transforms the raw json data to PyTorch Geometric
 Please note: 
 1) This is slow, because it does not currently use CUDA 
 2) Each dialogue turn is saved as a separate graph in the "dialogues" folder
-3) Only mention nodes from the current turn are encoded in the graph, and no agent responses are included (all previous turn utterances are, however, included)
 
 # Entity-Linking
 
