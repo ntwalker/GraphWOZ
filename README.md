@@ -20,3 +20,7 @@ The method for calculating this will also output a file for the dataset containi
 The file gnn_link_prediction.py imports from the previous file to first calculate these over the (train, validation, test) splits.
 Subsequently, the GNN then trains on the train dataset and outputs a file with predicted links and precision@1 for the validation set.
 The final step is evaluation on the test set, which outputs a similar file as before, but also including MRR calculated over the output.
+
+# Audio Files
+
+Link to download audio files: https://files.nr.no/samba/GraphDial/
